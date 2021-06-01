@@ -40,7 +40,7 @@ Counter.getInstance().getState(); // 0
 ## ⚠ Notice
 ***Main focus of that course is TypeScript so you must declare all types for complex structures, function arguments\return values e.t.c***
 
-***Any types are strictly prohibited!***
+*** Type "any" are strictly prohibited!***
 
 Write your code in `src/index.ts.
 *All test cases are designed as “error-free”, so don't worry about handling any errors.*
