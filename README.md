@@ -26,7 +26,8 @@ It should remain possible to implement new types of vehicles.
 
 ### Counter
 Implement a singleton class `Counter` with the functionality to store data.
-It should implement 2 service methods `getInstance, destroy` and 3 methods with business logic - `increase, decrease, getState`.
+It should implement 2 service methods `getInstance, destroy` 
+and 3 methods with business logic - `increase, decrease, getState`.
 
 For example:
 ```typescript
