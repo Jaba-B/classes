@@ -1,9 +1,9 @@
 # Classes
 
 ## ⚠ Notice
-***Main focus of that course is TypeScript so you must declare all types for complex structures, function arguments\return values e.t.c***
+***Main focus of this course is TypeScript so you must declare all types for complex structures, function arguments and return values e.t.c***
 
-*** Type "any" is strictly prohibited!***
+*** Type `any` is strictly prohibited!***
 
 Write your code in `src/index.ts.
 *All test cases are designed as “error-free”, so don't worry about handling any errors.*
