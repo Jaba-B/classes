@@ -11,15 +11,13 @@ Write your code in `src/index.ts.
 ## Tasks
 
 ### Vehicle
-You need to implement the functionality to create vehicles.
-All vehicles must implement the BaseVehicle interface.
-- Each type of vehicle has a fuel consumption and fuel level.
-- When the engine starts, fuel consumption starts at fuelConsumption every second.
-- Refueling restores the maximum fuel level.
-- Each vehicle must have model name and vendor name.
+Implement the functionality to create vehicles. All vehicles must implement the BaseVehicle interface.
+- Each type of a vehicle has fuel consumption and fuel level
+- When an engine starts, fuel consumption starts, and fuel consumption continues every second
+- Refueling restores the maximum fuel level
+- Each vehicle must have a model's name and vendor's name.
 
 You must implement Cars.
-
 It should remain possible to implement new types of vehicles.
 
 | Type  | Tank capacity | Startup Consumption | Work Consumption |
@@ -27,9 +25,8 @@ It should remain possible to implement new types of vehicles.
 | Car   | 40            | 3                   | 1                |
 
 ### Counter
-Implement singleton class `Counter` with functionality to store data.
-It should implement 2 service methods `getInstance, destroy` 
-and 3 methods with business logic: `increase, decrease, getState`.
+Implement a singleton class `Counter` with the functionality to store data.
+It should implement 2 service methods `getInstance, destroy` and 3 methods with business logic - `increase, decrease, getState`.
 
 For example:
 ```typescript
