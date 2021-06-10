@@ -15,7 +15,7 @@ Implement the functionality to create vehicles. All vehicles must implement the 
 - Each type of a vehicle has fuel consumption and fuel level
 - When an engine starts, fuel consumption starts, and fuel consumption continues every second
 - Refueling restores the maximum fuel level
-- Each vehicle must have a model's name and vendor's name.
+- Each vehicle must have a model's name and a vendor's name.
 
 You must implement Cars.
 It should remain possible to implement new types of vehicles.
