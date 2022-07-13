@@ -52,11 +52,20 @@ class Car {
 * Task 2: Counter singleton
 */
 class Counter {
-    getInstance(){}
+    constructor() {
+    }
+    
+    getInstance(){
+
+    }
     destroy() {}
-    increase() {}
-    decrease() {}
-    getState() {}
+    increase() {
+    }
+    decrease() {
+    }
+    getState() {
+
+    }
 }
 
 export {BaseVehicle, Car, Counter};
