@@ -19,7 +19,13 @@ interface BaseVehicleInterface {
 
     getEngineStatus(): VehicleStatus;
 
-    // Your implementation here
+    startEngine(): void;
+
+    stopEngine(): void;
+
+    getEngineStatus(): VehicleStatus;
+
+    refuel(): void;
 }
 
 interface CarInterface {
@@ -30,7 +36,15 @@ interface CarInterface {
     // Your implementation here
 }
 
-class BaseVehicle {
+class BaseVehicle implements BaseVehicleInterface {
+    modelName: string;
+    vendorName: string;
+    fuel: number = 0;
+
+    timeout;
+    tankCapacity: number;
+    fuelConsumption: FuelConsumptionInterface;
+    vehicleStatus: VehicleStatus = VehicleStatus.STOP;
 
     constructor(
         modelName: string,
@@ -38,13 +52,46 @@ class BaseVehicle {
         tankCapacity: number,
         fuelConsumption: FuelConsumptionInterface,
     ) {
+        this.modelName = modelName;
+        this.vendorName = vendorName;
+        this.tankCapacity = tankCapacity;
+        this.fuelConsumption = fuelConsumption;
     }
 
-    // Your implementation here
+    startEngine(): void {
+        this.vehicleStatus = VehicleStatus.WORK;
+        this.fuel -= this.fuelConsumption.start;
+        this.timeout = setTimeout(() => {
+            this.fuel -= this.fuelConsumption.work;
+        }, 1000);
+    }
+
+    stopEngine(): void {
+        clearTimeout(this.timeout);
+        this.vehicleStatus = VehicleStatus.STOP;
+    }
+
+    getEngineStatus(): VehicleStatus {
+        return this.vehicleStatus;
+    }
+
+    refuel(): void {
+        this.fuel = this.tankCapacity;
+    }
 }
 
-class Car {
-    // Your implementation here
+class Car extends BaseVehicle implements CarInterface{
+    constructor(modelName: string, vendorName: string) {
+        super(modelName, vendorName, 40, { start: 3, work: 1 });
+    }
+
+    drive() {
+        this.startEngine();
+    }
+
+    park() {
+        this.stopEngine();
+    }
 }
 
 
@@ -52,19 +99,37 @@ class Car {
 * Task 2: Counter singleton
 */
 class Counter {
-    constructor() {
-    }
-    
-    getInstance(){
 
+    private static instance: Counter;
+
+    count: number;
+
+    private constructor(count: number) {
+        this.count = count;
     }
-    destroy() {}
+
+    static getInstance() {
+        if (!Counter.instance) {
+            Counter.instance = new Counter(0);
+        }
+
+        return Counter.instance;
+    }
+
+    static destroy() {
+        Counter.getInstance().count = 0;
+    }
+
     increase() {
+        this.count += 1;
     }
-    decrease() {
-    }
-    getState() {
 
+    decrease() {
+        this.count -= 1;
+    }
+
+    getState() {
+        return this.count;
     }
 }
 
